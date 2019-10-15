@@ -6,7 +6,7 @@ console.dir(rootEl);
 const post = {
     id: 1,
     content: 'Первое видео в моей социальной сети',
-    iframeUrl: 'https://www.youtube.com/embed/zpOULjyy-n8?rel=0',
+    videoUrl: 'https://www.youtube.com/embed/zpOULjyy-n8?rel=0',
     likes: 5,
     dislikes: 1,
 };
@@ -14,11 +14,11 @@ const post = {
 const postEl = document.createElement('div');
 postEl.className = 'card'
 
-const iframeEl = document.createElement('video')
-iframeEl.src = post.iframeUrl;
-iframeEl.controls = true;
-iframeEl.className = 'embed-responsive embed-responsive-16by9'
-postEl.appendChild(iframeEl);
+const videoEl = document.createElement('video')
+videoEl.src = post.videoUrl;
+videoEl.controls = true;
+videoEl.className = 'embed-responsive embed-responsive-16by9'
+postEl.appendChild(videoEl);
 
 const postBodyEl = document.createElement('div');
 postBodyEl.className = 'card-body';
