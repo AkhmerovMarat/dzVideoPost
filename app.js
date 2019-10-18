@@ -1,6 +1,6 @@
 console.log('worked');
 const rootEl = document.getElementById('root');
-console.log(rootEl); 
+console.log(rootEl);
 console.dir(rootEl);
 
 const post = {
@@ -33,10 +33,9 @@ likesEl.className = 'btn btn-primary';
 likesEl.textContent = '👍' + post.likes;
 likesEl.onclick = function () {
     post.likes = post.likes + 1;
-    likesEl.textContent = '👍 ' + post.likes;  
+    likesEl.textContent = '👍 ' + post.likes;
 };
 postBodyEl.appendChild(likesEl);
-
 
 const dislikesEl = document.createElement('button');
 dislikesEl.className = 'btn btn-primary';
@@ -48,3 +47,9 @@ dislikesEl.onclick = function () {
 
 postBodyEl.appendChild(dislikesEl);
 rootEl.appendChild(postEl);
+
+// Второй способ с сайта : 'https://likebtn.com'
+//(function (d, e, s) { if (d.getElementById("likebtn_wjs")) return; 
+// a = d.createElement(e); 
+// m = d.getElementsByTagName(e)[0]; a.async = 1; a.id = "likebtn_wjs";
+// a.src = s; m.parentNode.insertBefore(a, m) })(document, "script", "//w.likebtn.com/js/w/widget.js");
