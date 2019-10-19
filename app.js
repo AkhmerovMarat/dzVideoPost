@@ -116,7 +116,6 @@ audioEl.src = post.audioUrl;
 audioEl.controls = true;
 audioEl.className = 'embed-responsive embed-responsive-21by9 card-img-top'
 postAudioEl.appendChild(audioEl);
-
 const postAudioBodyEl = document.createElement('div');
 postAudioBodyEl.className = 'card-body';
 postAudioEl.appendChild(postAudioBodyEl);
