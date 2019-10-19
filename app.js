@@ -48,8 +48,99 @@ dislikesEl.onclick = function () {
 postBodyEl.appendChild(dislikesEl);
 rootEl.appendChild(postEl);
 
-// Второй способ с сайта : 'https://likebtn.com'
-//(function (d, e, s) { if (d.getElementById("likebtn_wjs")) return; 
-// a = d.createElement(e); 
-// m = d.getElementsByTagName(e)[0]; a.async = 1; a.id = "likebtn_wjs";
-// a.src = s; m.parentNode.insertBefore(a, m) })(document, "script", "//w.likebtn.com/js/w/widget.js");
+const rootImgEl = document.getElementById('root');
+console.log(rootImgEl);
+console.dir(rootImgEl);
+const postImg = {
+    id: 2,
+    content: 'Второй пост в моей социальной сети',
+    imageUrl: 'https://placekitten.com/300/300',
+    likes: 6,
+    dislikes: 3,
+};
+  
+const postImgEl = document.createElement('div');
+postImgEl.className = 'card'
+
+const imgEl = document.createElement('img');
+imgEl.src = postImg.imageUrl;
+imgEl.className = 'card-img-top';
+postImgEl.appendChild(imgEl);
+
+const postImgBodyEl = document.createElement('div');
+postImgBodyEl.className = 'card-body';
+postImgEl.appendChild(postImgBodyEl);
+
+const postImgContentEl = document.createElement('p');
+postImgContentEl.textContent = postImg.content;
+postImgBodyEl.appendChild(postImgContentEl);
+
+const likesImgEl = document.createElement('button');
+likesImgEl.className = 'btn btn-primary';
+likesImgEl.textContent = '👍' + postImg.likes;
+likesImgEl.onclick = function () {
+    postImg.likes = postImg.likes + 1;
+    likesImgEl.textContent = '👍 ' + postImg.likes;
+};
+postImgBodyEl.appendChild(likesImgEl);
+
+const dislikesImgEl = document.createElement('button');
+dislikesImgEl.className = 'btn btn-primary';
+dislikesImgEl.textContent = '👎' + postImg.dislikes;
+dislikesImgEl.onclick = function () {
+    postImg.dislikes = postImg.dislikes + 1;
+    dislikesImgEl.textContent = '👎' + postImg.dislikes
+};
+
+postImgBodyEl.appendChild(dislikesImgEl);
+rootImgEl.appendChild(postImgEl);
+
+
+const rootAudioEl = document.getElementById('root');
+console.log(rootAudioEl);
+console.dir(rootAudioEl);
+
+const postAudio = {
+    id: 1,
+    content: 'Первый трек в моей социальной сети',
+    audioUrl: 'https://music.yandex.ru/iframe/#track/39479/3267',
+    likes: 10,
+    dislikes: 1,
+};
+
+const postAudioEl = document.createElement('div');
+postAudioEl.className = 'card'
+
+const audioEl = document.createElement('audio')
+audioEl.src = post.audioUrl;
+audioEl.controls = true;
+audioEl.className = 'embed-responsive embed-responsive-21by9 card-img-top'
+postAudioEl.appendChild(audioEl);
+
+const postAudioBodyEl = document.createElement('div');
+postAudioBodyEl.className = 'card-body';
+postAudioEl.appendChild(postAudioBodyEl);
+
+const postAudioContentEl = document.createElement('p');
+postAudioContentEl.textContent = postAudio.content;
+postAudioBodyEl.appendChild(postAudioContentEl);
+
+const likesAudioEl = document.createElement('button');
+likesAudioEl.className = 'btn btn-primary';
+likesAudioEl.textContent = '👍' + postAudio.likes;
+likesAudioEl.onclick = function () {
+    postAudio.likes = postAudio.likes + 1;
+    likesAudioEl.textContent = '👍 ' + postAudio.likes;
+};
+postAudioBodyEl.appendChild(likesAudioEl);
+
+const dislikesAudioEl = document.createElement('button');
+dislikesAudioEl.className = 'btn btn-primary';
+dislikesAudioEl.textContent = '👎' + postAudio.dislikes;
+dislikesAudioEl.onclick = function () {
+    postAudio.dislikes = postAudio.dislikes + 1;
+    dislikesAudioEl.textContent = '👎' + postAudio.dislikes
+};
+
+postAudioBodyEl.appendChild(dislikesAudioEl);
+rootAudioEl.appendChild(postAudioEl);
